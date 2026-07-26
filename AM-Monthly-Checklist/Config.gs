@@ -1,3 +1,6 @@
+// Config.gs
+// Central configuration for the retail audit system. Pure data — no
+// direct interaction with Forms or Sheets. Every other file reads from here.
 
 var CONFIG = {
   ORG_NAME: 'DeeHub Lifestyle',
@@ -9,20 +12,20 @@ var CONFIG = {
     'no separate reporting needed.',
   CONFIRMATION_MSG: 'Thank you — your audit has been recorded and the DeeHub dashboard has been updated.',
 
-  
+  // Google Drive file ID of the org logo. Set this, then run "Apply/Refresh Logo" from AM Tools.
   LOGO_FILE_ID: '',
 
-  // >>> Edit this list if your store footprint changes <<<
+  // Store footprint — update this list as stores are added or removed.
   STORES: [
-    'DB-PWS', 'DB-BBU', 'DB-SMT', 'DB-KTR', 'DB-JMU',
-    'DB-DGR', 'DB-SLP', 'DB-JRK', 'DB-PTM', 'DB-MRS'
+    'STORE-001', 'STORE-002', 'STORE-003', 'STORE-004', 'STORE-005',
+    'STORE-006', 'STORE-007', 'STORE-008', 'STORE-009', 'STORE-010'
   ],
 
   SCORE_COLS: ['1', '0'],          // 1 = compliant, 0 = not compliant, blank = N/A
   OVERDUE_DAYS_DEFAULT: 7          // fallback if Settings sheet value is missing
 };
 
-// Sheet names — change here once, every file picks it up
+// Sheet names — single source of truth, referenced across all files.
 var SHEETS = {
   MASTER: 'Master Log',
   ISSUES: 'Issue Log',
@@ -33,8 +36,7 @@ var SHEETS = {
   SETTINGS: 'Settings'
 };
 
-// Form question titles — used both when building the form and when
-// parsing submissions, so they always stay in sync.
+// Form question titles, shared between form construction and response parsing.
 var Q = {
   AM: 'AM Name',
   CLUSTER: 'Cluster',
@@ -45,17 +47,13 @@ var Q = {
 
 var TZ = Session.getScriptTimeZone();
 
-// Dashboard control cells (see Dashboard.gs)
-var FILTER_CELL = 'A5';           // Store dropdown, fixed in the left sidebar
-var MONTH_FILTER_CELL = 'A8';     // Month dropdown, fixed in the left sidebar
-var REFRESH_CHECKBOX_CELL = 'R2'; // Refresh trigger, sits inside the navy header band
+// Dashboard control cells (see Dashboard.gs).
+var FILTER_CELL = 'A5';           // Store filter dropdown
+var MONTH_FILTER_CELL = 'A8';     // Month filter dropdown
+var REFRESH_CHECKBOX_CELL = 'R2'; // Manual refresh trigger
 
-/* ===================== CHECKLIST DEFINITION =====================
- * Exactly the items from your original AM Checklist workbook — same
- * wording, same order, nothing added or removed. Each section gets a
- * short standard instruction line when the Form is built (see
- * FormBuilder.gs) rather than repeating similar text 7 times here.
- * =================================================================== */
+// Checklist definition — mirrors the original AM Checklist workbook.
+// Each section is rendered as its own form page (see FormBuilder.gs).
 var SECTIONS = [
   { name: 'BRANDING', items: [
     'Façade clean & no faulty lights',
