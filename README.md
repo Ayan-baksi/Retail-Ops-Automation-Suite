@@ -66,17 +66,17 @@ Every system is config-driven — store codes, thresholds, and settings live ent
 _Area Manager store audit scorecard — KPIs, score trends, and heat map by section._
 
 
-![image alt](https://github.com/Ayan-baksi/Retail-Ops-Automation-Suite/blob/main/AM-Monthly-Checklist/AM_MASTER%20DASHBAORD.png?raw=true)
+![image alt](https://github.com/Ayan-baksi/Retail-Ops-Automation-Suite/blob/main/AM-Monthly-Checklist/AM_MasterDashbaord.PNG?raw=true)
 
 ### VM Store Audit Dashboard
 _Visual merchandising adherence tracking — area-wise scores, store ranking, and low-score item tracking._
 
-![image alt](https://github.com/Ayan-baksi/Retail-Ops-Automation-Suite/blob/main/VM-CHECKLIST/VM_MASTER%20DASHBAORD.png?raw=true)
+![image alt](https://github.com/Ayan-baksi/Retail-Ops-Automation-Suite/blob/main/VM-CHECKLIST/VM_MASTER%20DASHBOARD.png?raw=true)
 
 ### SM Daily Checklist Dashboard
 _Daily Opening/Closing compliance — real-time completion status, photo evidence log, and issue tracking._
 
-![image_alt](https://github.com/Ayan-baksi/Retail-Ops-Automation-Suite/blob/main/SM-DAILY_CHECKLIST/SM_MASTER%20DASHBAORD.png?raw=true)
+![image_alt](https://github.com/Ayan-baksi/Retail-Ops-Automation-Suite/blob/main/SM-DAILY_CHECKLIST/SM_MasterDashboard.PNG?raw=true)
 
 ## Notes
 
